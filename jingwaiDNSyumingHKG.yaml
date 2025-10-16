@@ -1,0 +1,15 @@
+payload:
+  # 内容：DNS国外域名走香港节点
+  # 数量：X 条
+  # USER-AGENT,DNS国外域名走香港节点*
+  
+  # DNS 服务规则（悠哉定义：确保 DNS 解析流量正确路由，国内 DNS 直连防延迟，境外 DNS 走代理防污染）
+
+  # 境外 DNS 走代理
+  - DOMAIN,dns.cloudflare.com/dns-query
+  - DOMAIN,dns.google/dns-query 
+  - DOMAIN,8.8.8.8/dns-query
+  - DOMAIN,1.1.1.1/dns-query
+  - DOMAIN,8.8.4.4/dns-query
+  
+ 

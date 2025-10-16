@@ -1,0 +1,18 @@
+payload:
+  # 内容：境内dnsip不解析
+  # 数量：X 条
+  # USER-AGENT,境内dnsip不解析*
+
+# 国内 DNS ip 直连 不解析
+
+  - IP-CIDR,223.5.5.5/32
+  - IP-CIDR,119.29.29.29/32
+  - IP-CIDR,180.76.76.76/32
+  - IP-CIDR,114.114.114.114/32
+  - IP-CIDR,211.140.197.58/32                # 中国移动大连市 IPv4 DNS 域名 liaoning-chinamobile-dns.ln.chinamobile.com
+  - IP-CIDR,211.137.32.178/32                 # 中国移动辽宁省 IPv4 DNS
+  - IP-CIDR6,2400:3200::1/128               # 阿里云IPv6
+  - IP-CIDR6,2400:3200:baba::1/128     # 阿里云IPv6
+  - IP-CIDR6,2400:da00::6666/128        # 百度IPv6 DNS
+  - IP-CIDR6,2409:8014:2000::1/128      # 中国移动辽宁省大连市
+  - IP-CIDR6,2409:8014:2000::2/128       # 中国移动辽宁省
