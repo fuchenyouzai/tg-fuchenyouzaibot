@@ -1,0 +1,15 @@
+payload:
+  # 内容：YouTube
+  # 数量：11条
+  # USER-AGENT,YouTube*
+  - DOMAIN,youtubei.googleapis.com      # YouTube 核心接口域名  
+  - DOMAIN-SUFFIX,googlevideo.com     # YouTube 视频资源域名后缀
+  - DOMAIN-SUFFIX,ytimg.com                    # YouTube 图片资源域名后缀
+  - DOMAIN-SUFFIX,youtube.com                 # YouTube 主域名后缀
+  - DOMAIN-SUFFIX,ggpht.com                 #  获取视频播放所需的资源、视频封面图等  
+  - PROCESS-NAME,com.google.android.youtube                         # YouTube 安卓端进程名
+  - PROCESS-NAME,com.google.android.apps.youtube.music     # 谷歌音乐安卓端进程名
+  - PROCESS-NAME,app.revanced.android.apps.youtube.music # 谷歌音乐修改进程名  
+  - DOMAIN-KEYWORD,youtube            # 域名含youtube关键字
+  - DOMAIN-KEYWORD,googlevideo         # YouTube 视频资源域名关键字
+  - DOMAIN-KEYWORD,youtubei               # YouTube 接口域名关键字
