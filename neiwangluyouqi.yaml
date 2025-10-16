@@ -1,0 +1,36 @@
+payload:
+  # 内容：内网和路由器
+  # 数量：X 条
+  # USER-AGENT,内网和路由器*
+ 
+  # 悠哉内网/基础网络规则（本地网络、私有IP段直连，保障基础网络功能）
+
+  - DOMAIN-SUFFIX,acl4.ssr                              # 悠哉规则类型：DOMAIN-SUFFIX；值：acl4.ssr（订阅转换服务域名后缀）；目标分组：DIRECT
+  - DOMAIN-SUFFIX,ip6-localhost                        # 悠哉规则类型：DOMAIN-SUFFIX；值：ip6-localhost（IPv6本地主机名后缀）；目标分组：DIRECT
+  - DOMAIN-SUFFIX,ip6-loopback                          # 悠哉规则类型：DOMAIN-SUFFIX；值：ip6-loopback（IPv6回环地址后缀）；目标分组：DIRECT
+  - DOMAIN-SUFFIX,lan                                  # 悠哉规则类型：DOMAIN-SUFFIX；值：lan（局域网域名后缀）；目标分组：DIRECT
+  - DOMAIN-SUFFIX,local                                 # 悠哉规则类型：DOMAIN-SUFFIX；值：local（本地网络域名后缀）；目标分组：DIRECT
+  - DOMAIN-SUFFIX,localhost                             # 悠哉规则类型：DOMAIN-SUFFIX；值：localhost（本地主机域名后缀）；目标分组：DIRECT
+  - DOMAIN-SUFFIX,home.arpa                        # 悠哉规则类型：DOMAIN-SUFFIX；值：home.arpa（家庭局域网标准域名后缀）；目标分组：DIRECT
+
+
+
+
+  # 路由器管理规则（访问路由器后台直连，避免代理干扰）
+  
+  - PROCESS-NAME,com.huawei.smarthome         # 华智慧生活
+  - PROCESS-NAME,com.cmri.universalapp        # 移动爱家进程
+  - DOMAIN-SUFFIX,hiwifi.com                        # 无线网络管理平台域名，用于Wi-Fi管理、设备监控
+  - DOMAIN-SUFFIX,leike.cc                            # 磊科Power4S路由器后台登录域名，访问路由器设置界面
+  - DOMAIN-SUFFIX,miwifi.com                        # 小米路由器后台管理域名，可检测版本、升级固件
+  - DOMAIN-SUFFIX,my.router                            # 通用路由器本地管理域名，不同品牌型号通用
+  - DOMAIN-SUFFIX,p.to                                     # 斐讯路由器配置页面域名，用于路由器参数设置
+  - DOMAIN-SUFFIX,peiluyou.com                      # 路由器相关服务域名，辅助路由管理与配置
+  - DOMAIN-SUFFIX,phicomm.me                   # 斐讯路由器设置域名，访问后台进行网络配置
+  - DOMAIN-SUFFIX,router.ctc                    # 中国电信定制路由器管理域名，登录后台调整设置
+  - DOMAIN-SUFFIX,routerlogin.com                    # 通用路由器管理面板域名，设置Wi-Fi、安全参数
+  - DOMAIN-SUFFIX,tendawifi.com                   # 腾达路由器Web管理域名，连接设备后登录配置
+  - DOMAIN-SUFFIX,zte.home                 # 中兴路由器默认登录域名，设置WiFi名称与密码
+  - DOMAIN-SUFFIX,tplogin.cn              # TP-Link路由器登录域名，进入后台做网络、设备管理
+  - DOMAIN-SUFFIX,wifi.cmcc                    # 中国移动路由器/WiFi相关服务域名，访问管理界面
+  
