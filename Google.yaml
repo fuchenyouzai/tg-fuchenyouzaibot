@@ -1,0 +1,84 @@
+payload:
+  # 内容：Google
+  # 数量：X 条
+  # USER-AGENT,Google*
+  ###########################################################################
+  # 谷歌服务规则（悠哉定义：按服务敏感度分级，低敏感服务走香港节点（低延迟），高敏感服务走美国节点（适配性））
+  ###########################################################################
+  # 谷歌低敏感服务（悠哉用途：日常工具类服务，对节点地域无强要求，优先低延迟）
+
+  - PROCESS-NAME,com.google.android.apps.authenticator2,香港节点          # 谷歌身份验证器进程名
+  - PROCESS-NAME,com.google.android.apps.maps,香港节点                         # 谷歌地图进程名
+  - PROCESS-NAME,com.google.ar.lens,香港节点                                              # 谷歌智能镜头进程名
+  - PROCESS-NAME,com.google.android.apps.translate,香港节点                    # 谷歌翻译进程名
+  - PROCESS-NAME,com.google.android.apps.docs,香港节点                          # 谷歌云端硬盘进程名
+  - PROCESS-NAME,com.google.android.gm,香港节点                                      # 谷歌邮箱进程名
+  - PROCESS-NAME,com.google.android.inputmethod.latin,香港节点               # 谷歌输入法进程名
+  - PROCESS-NAME,com.google.android.syncadapters.contacts,香港节点       # 谷歌通讯录同步进程名
+  - PROCESS-NAME,com.google.android.syncadapters.calendar,香港节点       # 谷歌日历同步进程名
+
+
+# 谷歌中敏感服务（悠哉用途：合作伙伴服务/通信服务，需稳定节点 ）
+
+  - PROCESS-NAME,com.google.android.contactkeys,香港节点                         # 谷歌联系人密钥进程名
+  - PROCESS-NAME,com.google.android.ims,香港节点                                        # 谷歌运营商通信服务进程名
+  - PROCESS-NAME,com.google.android.partnersetup,GV专用美国节点1           # 谷歌合作伙伴设置进程名
+ 
+
+
+
+  ######################
+  # 谷歌 高风险验证 规则，例如google voice gv规则等,逐步完善中.谷歌高敏感服务（悠哉用途：账号验证、GV 等服务，对节点地域有强要求，需美国节点）
+  ######################
+  
+  - DOMAIN,voice.googleapis.com,GV专用美国节点1
+  - DOMAIN,voice.google.com,GV专用美国节点1
+
+  - DOMAIN,peoplestack-pa.googleapis.com,GV专用美国节点1  
+  - DOMAIN,www.google-analytics.com,GV专用美国节点1
+  - DOMAIN,ogads-pa.clients6.google.com,GV专用美国节点1
+
+
+
+  - DOMAIN-SUFFIX,gvt1.com,GV专用美国节点1                         # 属于Google用于各种服务的检测和数据收集
+  - DOMAIN-SUFFIX,gvt2.com,GV专用美国节点1                        # 谷歌CDN域视频音频内容分发大或大规模分发内容通过这个来加速
+  - DOMAIN-SUFFIX,gstatic.com,GV专用美国节点1
+  - DOMAIN-SUFFIX,googleapis.com,GV专用美国节点1
+  - DOMAIN-SUFFIX,withgoogle.com,GV专用美国节点1
+
+  - DOMAIN-SUFFIX,googleusercontent.com,GV专用美国节点1          # 涉及Google应用的内容和功能服务。
+  - DOMAIN-SUFFIX,doubleclick.net,GV专用美国节点1
+
+
+
+
+# 谷歌高风险进程
+
+  - PROCESS-NAME,com.google.android.gms,GV专用美国节点1            # GooglePlay服务
+  - PROCESS-NAME,com.google.android.gsf,GV专用美国节点1              # Google服务框架
+  - PROCESS-NAME,com.android.vending,GV专用美国节点1                  # 谷歌商店
+  - PROCESS-NAME,com.android.chrome,GV专用美国节点1                  # 谷歌浏览器  
+  - PROCESS-NAME,com.google.android.apps.googlevoice,GV专用美国节点1        # GV  voice
+  - PROCESS-NAME,com.google.uid.shared,GV专用美国节点1     # 是谷歌相关的共享用户ID服务，通常与谷歌账号验证、应用授权等功能有关。该连接指向 Google Play 商店的安全端口，可能是用于验证、下载应用或同步数据
+  - PROCESS-NAME,com.google.android.googlequicksearchbox,GV专用美国节点1           # Google 搜索应用的核心进程，主要负责提供快速搜索、语音识别和搜索建议等功能。通常由 Google LLC 维护，是 Android 系统中重要的预装应用之一。
+
+ # 谷歌高风险关键词兜底
+
+  - DOMAIN-KEYWORD,voice,GV专用美国节点1
+  - DOMAIN-KEYWORD,googleapis,GV专用美国节点1                       # 通常用于谷歌提供的API服务
+  - DOMAIN-KEYWORD,peoplestack,GV专用美国节点1
+  - DOMAIN-KEYWORD,accounts.google,GV专用美国节点1
+  - DOMAIN-KEYWORD,googleusercontent,GV专用美国节点1
+
+# 谷歌google.com域名后缀兜底 太广泛
+
+  - DOMAIN-SUFFIX,google.com,GV专用美国节点1
+
+# google 关键词，太广泛需要垫底，与出境易中的谷歌内容呼应，出境易进程垫底兜底。
+
+  - DOMAIN-KEYWORD,google,GV专用美国节点1
+
+
+
+# 谷歌兜底结束。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。
+
