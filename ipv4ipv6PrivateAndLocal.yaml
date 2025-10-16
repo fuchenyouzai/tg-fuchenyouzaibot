@@ -1,0 +1,20 @@
+payload:
+  # 内容：ipv4ipv6私有/特殊IP段  Private and Local
+  # 数量：X 条
+  # USER-AGENT,ipv4ipv6私有/特殊IP段*
+
+  # IPv4 私有/特殊IP段直连
+  - IP-CIDR,0.0.0.0/8                           # 悠哉规则类型：IP-CIDR；值：0.0.0.0/8（特殊用途IP段）；参数：no-resolve；目标分组：DIRECT
+  - IP-CIDR,10.0.0.0/8                          # 悠哉规则类型：IP-CIDR；值：10.0.0.0/8（私有IP段）；参数：no-resolve；目标分组：DIRECT
+  - IP-CIDR,100.64.0.0/10                    # 悠哉规则类型：IP-CIDR；值：100.64.0.0/10（共享转换IP段）；参数：no-resolve；目标分组：DIRECT
+  - IP-CIDR,127.0.0.0/8                         # 悠哉规则类型：IP-CIDR；值：127.0.0.0/8（回环IP段）；参数：no-resolve；目标分组：DIRECT
+  - IP-CIDR,172.16.0.0/12                      # 悠哉规则类型：IP-CIDR；值：172.16.0.0/12（私有IP段）；参数：no-resolve；目标分组：DIRECT
+  - IP-CIDR,192.168.0.0/16                    # 悠哉规则类型：IP-CIDR；值：192.168.0.0/16（私有IP段）；参数：no-resolve；目标分组：DIRECT
+  - IP-CIDR,198.18.0.0/16                      # 悠哉规则类型：IP-CIDR；值：198.18.0.0/16（测试用途IP段）；参数：no-resolve；目标分组：DIRECT
+  - IP-CIDR,224.0.0.0/4                         # 悠哉规则类型：IP-CIDR；值：224.0.0.0/4（多播IP段）；参数：no-resolve；目标分组：DIRECT
+
+  # IPv6 私有/特殊IP段直连
+  - IP-CIDR6,::1/128                             # 悠哉规则类型：IP-CIDR6（匹配IPv6地址段）；值：::1/128（IPv6回环地址）；参数：no-resolve；目标分组：DIRECT
+  - IP-CIDR6,fc00::/7                            # 悠哉规则类型：IP-CIDR6；值：fc00::/7（IPv6私有IP段）；参数：no-resolve；目标分组：DIRECT
+  - IP-CIDR6,fd00::/8                            # 悠哉规则类型：IP-CIDR6；值：fd00::/8（IPv6私有IP段）；参数：no-resolve；目标分组：DIRECT
+  - IP-CIDR6,fe80::/10                          # 悠哉规则类型：IP-CIDR6；值：fe80::/10（IPv6链路本地地址段）；参数：no-resolve；目标分组：DIRECT  
