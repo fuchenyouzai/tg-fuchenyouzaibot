@@ -1,0 +1,283 @@
+payload:
+  # 内容：国内直连
+  # 数量：X 条
+  # USER-AGENT,国内直连*
+  
+# 1. 云服务与账号类（数据同步、登录验证）
+  - DOMAIN-SUFFIX,vivo.com                                        # vivo主域名（云服务入口、账号验证）
+  - DOMAIN-SUFFIX,vivo.com.cn                                     # vivo国内主域名（云同步核心接口）
+  - DOMAIN-SUFFIX,vivocloud.com                                   # vivo云服务专属域名（数据同步、存储）
+  - DOMAIN-SUFFIX,vivoidc.com                                     # vivo IDC数据中心（云服务服务器节点）
+  - DOMAIN-SUFFIX,vivocloudapi.com                                # vivo云服务API域名（同步指令、状态查询）
+  - DOMAIN-SUFFIX,findphone.vivo.com                              # vivo/iQOO查找手机专属域名
+  - DOMAIN-SUFFIX,iqoo.com                                        # iQOO主域名（账号、社区、服务）
+  - DOMAIN-SUFFIX,iqoo.com.cn                                     # iQOO国内主域名（云服务、系统接
+# 2. CDN与资源类（静态资源、大文件加速）
+  - DOMAIN-SUFFIX,vivocdn.com                                     # vivo官方CDN（图标、样式、安装包）
+  - DOMAIN-SUFFIX,vivocdn.cn                                      # vivo国内CDN（大文件同步加速）
+  - DOMAIN-SUFFIX,alivovo.com                                     # vivo与阿里合作CDN（云资源分发）
+  - DOMAIN-SUFFIX,iqoocdn.com                                     # iQOO专属CDN（游戏资源、系统更新）
+# 3. 系统功能类（应用商店、音乐、互传等）
+  - DOMAIN-SUFFIX,vivomarket.com                                  # vivo/iQOO应用商店域名
+  - DOMAIN-SUFFIX,vivoame.com                                     # vivo/iQOO音乐服务域名（i音乐）
+  - DOMAIN-SUFFIX,vivofiletransfer.com                            # vivo/iQOO互传功能域名
+  - DOMAIN-SUFFIX,iqoogame.com                                    # iQOO游戏中心专属域名（游戏更新、福利）
+  - DOMAIN-SUFFIX,pc.vivocloud.com                                # PC端vivo云服务专属域名（登录、文件传输）
+  - DOMAIN-SUFFIX,suite.vivo.com                                  # vivo手机助手PC端域名（驱动、数据管理）
+  - DOMAIN-SUFFIX,suite.iqoo.com                                  # iQOO手机助手PC端域名（驱动、数据管理）
+# 4. 兜底匹配类（避免域名遗漏）
+  - DOMAIN-KEYWORD,vivoCloud                                      # 兜底匹配vivo云服务相关请求
+  - DOMAIN-KEYWORD,iQOOCloud                                      # 兜底匹配iQOO云服务相关请求
+  - DOMAIN-KEYWORD,云服务                                         # 中文关键词兜底（覆盖云服务相关链接）
+  - DOMAIN-KEYWORD,vivo                                           # 兜底匹配vivo全品类相关域名
+  - DOMAIN-KEYWORD,iqoo                                           # 兜底匹配iQOO全品类相关域名                       
+# 1. 手机端 - vivo专属进程
+  - PROCESS-NAME,com.vivo.vivocloud                               # vivo云服务核心APP进程
+  - PROCESS-NAME,com.vivo.account                                 # vivo账号进程（云服务登录依赖）
+  - PROCESS-NAME,com.vivo.findphone                               # vivo查找手机进程
+  - PROCESS-NAME,com.vivo.backup                                  # vivo云备份进程
+  - PROCESS-NAME,com.bbk.cloud                                    # vivo云服务历史进程（老机型）
+  - PROCESS-NAME,com.vivo.cloud                                   # vivo云服务后台进程（新机型）
+  - PROCESS-NAME,com.vivo.cloudservice                            # vivo云服务后台同步进程
+  - PROCESS-NAME,com.vivo.disk                                    # vivo云盘进程
+  - PROCESS-NAME,com.vivo.cloud.disk                              # vivo云盘后台进程
+  - PROCESS-NAME,com.bbk.appstore                                 # vivo应用商店进程
+  - PROCESS-NAME,com.android.bbkmusic                             # vivo i音乐进程
+  - PROCESS-NAME,com.vivo.easyshare                               # vivo互传进程
+  - PROCESS-NAME,com.vivo.pushservice                             # vivo推送引擎（系统通知）
+  - PROCESS-NAME,com.vivo.wallet                                  # vivo钱包进程（支付、门禁卡）
+  - PROCESS-NAME,com.vivo.game                                    # vivo游戏中心进程
+  - PROCESS-NAME,com.vivo.agent                                   # vivo Jovi语音进程
+  - PROCESS-NAME,com.vivo.assistant                               # vivo智能助手进程
+  - PROCESS-NAME,com.vivo.gallery                                 # vivo相册进程（云相册同步）
+  - PROCESS-NAME,com.android.filemanager                           # vivo文件管理进程（云盘访问）
+  - PROCESS-NAME,com.bbk.updater                                  # vivo系统升级进程（OTA更新）
+  - PROCESS-NAME,com.vivo.email                                   # vivo电子邮件进程（账号同步）
+  - PROCESS-NAME,com.vivo.calendar                                # vivo日历进程（日程同步）
+  - PROCESS-NAME,com.vivo.notes                                   # vivo便签进程（便签同步）
+  - PROCESS-NAME,com.bbk.account                                  # vivo账号历史进程（老机型）
+  - PROCESS-NAME,com.bbk.launcher2                                # vivo桌面进程
+  - PROCESS-NAME,com.vivo.browser                                 # vivo浏览器进程
+  - PROCESS-NAME,com.vivo.space                                   # vivo官网进程
+  - PROCESS-NAME,com.vivo.hybrid                                  # vivo快应用进程
+  - PROCESS-NAME,com.vivo.abe                                     # vivo智慧引擎进程
+  - PROCESS-NAME,com.vivo.hiboard                                 # vivo智慧桌面进程
+  - PROCESS-NAME,com.vivo.appfilter                               # vivo管家服务插件
+  - PROCESS-NAME,com.vivo.numbermark                              # vivo陌生来电识别
+  - PROCESS-NAME,com.vivo.faceunlock                              # vivo面部识别进程
+  - PROCESS-NAME,com.vivo.aitranslate                             # vivo语音翻译进程
+  - PROCESS-NAME,com.vivo.weather                                 # vivo天气进程
+  - PROCESS-NAME,com.vivo.weather.provider                           # vivo天气存储进程
+  - PROCESS-NAME,com.vivo.sim.contacts                             # vivo SIM卡联系人服务
+  - PROCESS-NAME,com.android.bbksoundrecorder                           # vivo录音机进程
+  - PROCESS-NAME,com.vivo.scanner                                 # vivo扫一扫进程
+  - PROCESS-NAME,com.vivo.videoeditor                             # vivo照片电影进程
+  - PROCESS-NAME,com.vivo.upnpserver                              # vivo智慧投屏进程
+  - PROCESS-NAME,com.vivo.magazine                                # vivo阅图锁屏服务
+  - PROCESS-NAME,com.vivo.video.floating                           # vivo视频通话美颜
+  - PROCESS-NAME,com.vivo.safecente                               # vivo安全中心进程
+  - PROCESS-NAME,com.vivo.doubleinstance                           # vivo应用分身进程
+  - PROCESS-NAME,com.vivo.vivokaraoke                             # vivo移动KTV进程
+  - PROCESS-NAME,com.vivo.favorite                                # vivo收藏进程
+  - PROCESS-NAME,com.android.bbklog                               # vivo Log信息采集进程
+  - PROCESS-NAME,com.yozo.vivo.officevivo                           # vivo文档阅读器进程
+  - PROCESS-NAME,com.vivo.globalsearch                            # vivo全局搜索进程
+  - PROCESS-NAME,com.vlife.vivo.wallpaper                           # vivo动态锁屏服务
+  - PROCESS-NAME,com.sohu.inputmethod.sogou.vivo                           # vivo搜狗输入法定制版
+  - PROCESS-NAME,com.vivo.widget.calendar                           # vivo日历挂件进程
+  - PROCESS-NAME,com.vivo.smartshot                               # vivo超级截屏进程
+  - PROCESS-NAME,com.vivo.aiengine                                # vivo AI服务引擎进程
+  - PROCESS-NAME,com.vivo.contentcatcher                           # vivo全局内容识别进程
+  - PROCESS-NAME,com.yuchuang.xycapkshare                           # vivo APK提取与分享进程
+  - PROCESS-NAME,com.vivo.sdkplugin                               # vivo服务安全插件进程
+  - PROCESS-NAME,com.vivo.vtouch                                  # vivo智慧视觉进程
+  - PROCESS-NAME,com.mobile.iroaming                              # vivo流量商店进程
+  - PROCESS-NAME,com.vivo.gamewatch                               # vivo游戏监控进程
+  - PROCESS-NAME,com.vivo.daemonService                           # vivo后台服务进程
+  - PROCESS-NAME,com.vivo.vms                                     # vivo移动服务
+# 2. 手机端 - iQOO专属进程
+  - PROCESS-NAME,com.iqoo.vivocloud                               # iQOO云服务核心进程（部分机型）
+  - PROCESS-NAME,com.iqoo.account                                 # iQOO账号进程（独立账号机型）
+  - PROCESS-NAME,com.iqoo.findphone                               # iQOO查找手机进程
+  - PROCESS-NAME,com.iqoo.secure                                  # iQOO管家进程（系统安全）
+  - PROCESS-NAME,com.iqoo.game                                    # iQOO游戏中心进程
+  - PROCESS-NAME,com.iqoo.gamewatch                               # iQOO游戏监控进程（性能调节）
+  - PROCESS-NAME,com.iqoo.ui                                      # iQOO桌面进程（OriginOS专属）
+  - PROCESS-NAME,com.iqoo.neo.game                                # iQOO Neo系列游戏优化进程
+# 3. 手机端 - 通用系统进程（vivo/iQOO共需）
+  - PROCESS-NAME,org.codeaurora.bluetooth                           # 蓝牙核心进程
+  - PROCESS-NAME,org.codeaurora.btmultisim                           # 蓝牙多SIM卡适配进程
+  - PROCESS-NAME,org.codeaurora.ims                                # VoLTE网络通信进程
+  - PROCESS-NAME,com.ibimuyu.lockscreen                            # 通用锁屏服务进程
+  - PROCESS-NAME,com.sohu.inputmethod.sogou                           # 搜狗输入法通用进程
+  - PROCESS-NAME,com.quark.browser                                 # 夸克浏览器进程
+  - PROCESS-NAME,com.ucmobile.lite                                 # UC浏览器进程
+  - PROCESS-NAME,com.unionpay                                      # 云闪付进程
+  - PROCESS-NAME,com.unionpay.tsmservice                           # 银联可信服务组件
+  - PROCESS-NAME,com.chinamobile.mcloud                            # 中国移动云盘进程
+  - PROCESS-NAME,com.vkontakte.android                             # VK社交软件进程
+  - PROCESS-NAME,com.liteapks.androidapps                           # 破解商店进程
+  - PROCESS-NAME,com.azure.authenticator                           # 二次验证进程
+# 4. 电脑端 - vivo/iQOO通用进程
+  - PROCESS-NAME,vivoCloud.exe                                    # vivo云服务PC客户端主进程
+  - PROCESS-NAME,vivoCloudService.exe                             # vivo云服务PC后台同步进程
+  - PROCESS-NAME,iQOOCloud.exe                                    # iQOO云服务PC客户端主进程
+  - PROCESS-NAME,vivoSuite.exe                                    # vivo手机助手PC端进程
+  - PROCESS-NAME,iQOOSuite.exe                                    # iQOO手机助手PC端进程
+  - PROCESS-NAME,vivoDriverInstaller.exe                           # vivo PC端驱动安装进程
+# 三星手机规则
+  - DOMAIN-SUFFIX,galaxy.store                                                 # 商店
+  - DOMAIN-SUFFIX,samsung.com                                                 # 官网
+ # 华为手机 规则  悠哉   TG   @fucgenyouzaibot                          
+  - DOMAIN-SUFFIX,appgallery.huawei.com
+  - DOMAIN-SUFFIX,huaweicloud.com
+  - PROCESS-NAME,cn.cj.pe                                                                             # 139邮箱
+  - PROCESS-NAME,com.baidu.BaiduMap                                                        # 百度
+  - PROCESS-NAME,com.huawei.hiskytone                                                         # 天际通
+  - PROCESS-NAME,com.mt.mtxx.mtxx                                                            # 美图秀秀
+  - PROCESS-NAME,com.sohu.inputmethod.sogou                                                # 搜狗输入法
+  - PROCESS-NAME,com.smile.gifmaker                                                           # 快手
+  - PROCESS-NAME,cn.android.sia.exitentrypermit                                             # 移民局app
+  - PROCESS-NAME,cn.cyberIdentity.certification                                                 # 国家网络身份认证
+  - PROCESS-NAME,cn.wps.moffice_eng                                                    # wps办公
+  - PROCESS-NAME,com.MobileTicket                                                     # 铁路12306
+  - PROCESS-NAME,com.cmcc.cmvideo                                                       # 咪咕视频
+  - PROCESS-NAME,com.dlmetro.app                                                         # 公交卡
+  - PROCESS-NAME,com.cmcc.hebao                                                         # 移动和包
+  - PROCESS-NAME,com.greenpoint.android.mc10086.activity                                              # 中国移动app
+  - PROCESS-NAME,com.haier.uhome.uplus                                                      # 海尔智家
+  - PROCESS-NAME,com.jingdong.app.mall                                                            # 京东
+  - PROCESS-NAME,com.mzk.android                                                                  # 公交通行
+  - PROCESS-NAME,com.ss.android.ugc.aweme                                                      # 抖音
+  - PROCESS-NAME,com.sdu.didi.psnger                                                              # 滴滴出行
+  - PROCESS-NAME,com.tmri.app.main                                                                # 交管12123
+  - PROCESS-NAME,com.umetrip.android.msky.app                                               # 航旅纵横
+  - PROCESS-NAME,com.ygkj.chelaile.standard                                                     # 车来了
+  - PROCESS-NAME,com.android.browser                                                           # 华浏览器
+  - PROCESS-NAME,com.android.calendar                                                         # 华日历
+  - PROCESS-NAME,com.android.contacts                                                        # 华联系人
+  - PROCESS-NAME,com.android.contacts                                                     #华电话
+  - PROCESS-NAME,com.android.deskclock                                                  # 华时钟
+  - PROCESS-NAME,com.android.gallery3d                                                  # 华图库
+  - PROCESS-NAME,com.android.mediacenter                                            # 华音乐
+  - PROCESS-NAME,com.android.mms                                                     # 华信息
+  - PROCESS-NAME,com.android.settings                                                        # 华设置
+  - PROCESS-NAME,com.android.soundrecorder                                            # 华录音
+  - PROCESS-NAME,com.android.stk                                                                # 华sim卡应用
+  - PROCESS-NAME,com.example.android.notepad                                               # 华备忘录
+  - PROCESS-NAME,com.huawei.android.findmyphone                                        # 华查找设备
+  - PROCESS-NAME,com.huawei.camera                                                    # 华相机
+  - PROCESS-NAME,com.huawei.hidisk                                                      # 华文件管理
+  - PROCESS-NAME,com.huawei.himovie                                                  # 华视频com.huawei.vassistant                           #华智慧语音
+  - PROCESS-NAME,com.huawei.android.hwouc                                                              # 华软件更新
+  - PROCESS-NAME,com.huawei.android.thememanager                                              # 主题
+  - PROCESS-NAME,com.huawei.android.totemweather                                             # 华天气
+  - PROCESS-NAME,com.huawei.appmarket                                                            # 华应用商店
+  - PROCESS-NAME,com.huawei.gameassistant                                                  # 华应用助手
+  - PROCESS-NAME,com.huawei.health                                                           # 华为健康
+  - PROCESS-NAME,com.huawei.hicloud                                                      # 华为云空间
+  - PROCESS-NAME,com.huawei.meetime                                                    # 华为 畅联
+  - PROCESS-NAME,com.huawei.phoneservice                                              # 我的华为
+  - PROCESS-NAME,com.huawei.systemmanager                                    # 华手机管家
+  - PROCESS-NAME,com.huawei.wallet                                                # 华钱包
+  - PROCESS-NAME,com.vmall.client                                              # 华商城
+  - PROCESS-NAME,com.dangbei.ai                                              # 当贝ai
+  - PROCESS-NAME,com.baidu.duer.superapp                                              # 小度
+  - PROCESS-NAME,cmccwm.mobilemusic                                              # 咪咕音乐
+  - PROCESS-NAME,com.baidu.searchbox                                              # 百度
+  - PROCESS-NAME,com.baidu.wenku                                              # 百度文库
+  - PROCESS-NAME,com.dangbei.ai                                              # 当贝ai
+  - PROCESS-NAME,com.dangbei.remotecontroller                                              # 当贝家
+  - PROCESS-NAME,com.cmic.heduohao                                              # 和多号
+  - PROCESS-NAME,com.huawei.android.pushagent                                              # 华为手机的系统推送服务进程
+  - PROCESS-NAME,data.hicloud.com                                              # 华为云服务的核心数据域名
+  - PROCESS-NAME,com.huawei.rcsserviceapplication                                              # 华为手机通讯服务
+  - PROCESS-NAME,com.huawei.hiaction.share_user                                              # 华为设备间快捷分享功能的核心组件
+  - PROCESS-NAME,channel.hitouch.hicloud.com                                              # 华为手机一碰传互传互联云端支持
+  - PROCESS-NAME,com.huawei.hwid                                              # 华为账号（Huawei ID）的核心服务组件
+  - PROCESS-NAME,grs.dbankcloud.eu                                              # 华为面向欧洲地区的全球资源调度（GRS）域名
+# deepseek 规则
+  - DOMAIN-SUFFIX,deepseek.com
+  - DOMAIN-SUFFIX,deepseek.ai 
+  - DOMAIN-KEYWORD,deepseek
+  - DOMAIN-KEYWORD,deepseek.chat
+  - PROCESS-NAME,com.deepseek.chat                        
+# 豆包核心业务域名（全量覆盖，含主站、API、资源）
+  - DOMAIN-SUFFIX,doubao.com                                    # 豆包主域名（如web端、官网）
+  - DOMAIN-SUFFIX,doubaoapis.com                               # 豆包核心API接口域名（对话、功能调用）
+  - DOMAIN-SUFFIX,doubaoimg.com                                # 豆包资源域名（图片、表情、附件）
+  - DOMAIN-SUFFIX,doubaocdn.com                                # 豆包CDN加速域名（静态资源加载）
+# 豆包CDN及资源域名 豆包依赖的第三方资源域名（避免代理拦截静态资源）
+  - DOMAIN-SUFFIX,bdimg.com                                    # 百度系CDN（豆包部分图片/图标依赖）
+  - DOMAIN-SUFFIX,bdstatic.com                                 # 百度系静态资源（豆包样式/脚本依赖）
+  - DOMAIN-SUFFIX,qianfanapi.com                               # 百度千帆API（豆包部分AI能力依赖）
+  - DOMAIN-SUFFIX,qianfancdn.com                               # 百度千帆CDN（AI能力相关资源）
+  - DOMAIN-SUFFIX,bytedance.com
+  - PROCESS-NAME,com.larus.nova                                                # 豆包
+  - PROCESS-NAME,com.bytedance.doubao                                  # 豆包APP进程（精准匹配手机端APP，优先于其他规则）
+  - DOMAIN-KEYWORD,Doubao                                 # 豆包专属UA标识（覆盖网页端、小程序端请求）
+# 腾讯元宝
+  - PROCESS-NAME,com.tencent.hunyuan.app.chat
+# 腾讯规则微信QQ
+  - DOMAIN-SUFFIX,qq.com
+  - DOMAIN-SUFFIX,wx.qq.com                                               # 微信相关域名
+  - DOMAIN-SUFFIX,im.qq.com                                                # QQ即时通讯相关域名
+  - PROCESS-NAME,com.tencent.mm                                     # 微信进程
+  - PROCESS-NAME,com.tencent.mobileqq                               # QQ进程
+  - PROCESS-NAME,WeChat.exe
+  - PROCESS-NAME,QQ.exe
+  - PROCESS-NAME,com.tencent.androidqqmailr                                                 # 手机qq邮箱
+  - DOMAIN-KEYWORD,qq                                                        # 关键词qq直播
+  - DOMAIN-KEYWORD,weixin
+ # 百度网盘
+  - PROCESS-NAME,BaiduNetdisk.exe
+  - DOMAIN-SUFFIX,pan.baidu.com                                     # 百度网盘主域名
+  - DOMAIN-SUFFIX,baidupcs.com                                       # 百度网盘相关存储域名
+# 腾讯视频TV版（极光TV）
+  - PROCESS-NAME,com.tencent.tv                                            # 安卓端包名，PC端若有客户端可类似查找进程名
+  - DOMAIN-SUFFIX,qq.com                                                      # 腾讯相关服务
+  - DOMAIN-SUFFIX,v.qq.com                                                  # 腾讯视频域名
+ # 爱奇艺TV版（银河奇异果）
+  - PROCESS-NAME,com.qiyi.video.tv                                       # 安卓端包名
+  - DOMAIN-SUFFIX,qiyi.com                                                 # 爱奇艺基础服务域名
+  - DOMAIN-SUFFIX,tv.qiyi.com                                             # 爱奇艺TV版相关域名
+# 优酷TV版（CIBN酷喵影视）
+  - PROCESS-NAME,com.youku.tv                                        # 安卓端包名
+  - DOMAIN-SUFFIX,youku.com                                           # 优酷基础服务域名
+  - DOMAIN-SUFFIX,tv.youku.com                                        # 优酷TV版相关域名
+# 咪咕规则
+  - DOMAIN-SUFFIX,migu.cn
+  - DOMAIN-SUFFIX,miguvideo.com
+  - DOMAIN-SUFFIX,cmvideo.com
+  - DOMAIN-KEYWORD,migu 
+  - DOMAIN-KEYWORD,cmvideo
+  - DOMAIN-KEYWORD,miguvideo
+# PayPal 规则
+  - DOMAIN-KEYWORD,paypal
+  - DOMAIN-SUFFIX,paypal.com
+  - PROCESS-NAME,com.paypal.android.p2pmobile
+# 币安
+  - PROCESS-NAME,com.binance.dev                                   # 币安
+# 欧易
+  - PROCESS-NAME,com.okinc.okex.gp                                 # 欧易
+#惠普
+  - DOMAIN-SUFFIX,arubanetworks.com                                        # Aruba Networks（属于惠普公司）提供的网络设备和解决方案域名，用于管理企业无线网络和交换机系统
+ #华硕
+  - DOMAIN-SUFFIX,asus.com                                                        # 华硕公司的官方网站，用于销售和支持其电子产品，包括主板、笔记本、路由器等。
+  - DOMAIN-SUFFIX,asusrouter.com                                               # 与华硕路由器相关的域名，用于路由器设备的管理和支持
+# 出境易 分流规则
+  - DOMAIN-SUFFIX,chujingyi.com                             # 出境易主域名（境内功能入口，如APP首页、用户中心）
+  - DOMAIN-SUFFIX,chujingyi.cn                             # 出境易境内备用域名（主域名解析异常时兜底）
+  - DOMAIN-SUFFIX,chujingyi.net                             # 出境易数据同步域名（本地行程云备份、配置同步）
+  - DOMAIN-SUFFIX,chujingyi.com                             # 置顶主域名规则，防止被其他通用域名规则拦截
+  - DOMAIN-KEYWORD,chujingyi-api                            # 出境易境内API接口（如验证码发送、登录验证请求）
+  - DOMAIN-KEYWORD,chujingyi                                # 置顶关键词规则，所有含“chujingyi”的请求优先匹配专属规则
+# 关联第三方服务，对接境内外支付、运营商等第三方，按属性匹配路由
+  - DOMAIN-SUFFIX,chujingyi-alipay.com                           # 境内支付宝支付对接（境内支付通道，直连更稳定）
+  - DOMAIN-SUFFIX,chujingyi-wechatpay.com                           # 境内微信支付对接（境内支付通道，避免代理延迟）
+  - DOMAIN-SUFFIX,chujingyi-10086.com                           # 境内中国移动漫游对接（境内运营商服务，直连保畅通）
+  - DOMAIN-SUFFIX,chujingyi-paypal.com                           # 境外PayPal支付对接（境外支付通道，需代理访问）
+# 境内服务器IP段直接匹配出境易境内服务器IP，避免域名解析异常导致功能失效
+  - IP-CIDR,103.235.76.0/22                             # 出境易上海境内服务器IP段（负责华东地区用户请求）
+  - IP-CIDR,120.241.16.0/20                             # 出境易北京境内服务器IP段（主数据中心，存储用户核心信息）
+  - IP-CIDR,183.131.72.0/21                             # 出境易杭州境内服务器IP段（备用数据中心，分担流量压力）
