@@ -2,9 +2,9 @@ payload:
   # 内容：Google
   # 数量：X 条
   # USER-AGENT,Google*
-  ###########################################################################
+
   # 谷歌服务规则（悠哉定义：按服务敏感度分级，低敏感服务走香港节点（低延迟），高敏感服务走美国节点（适配性））
-  ###########################################################################
+  
   # 谷歌低敏感服务（悠哉用途：日常工具类服务，对节点地域无强要求，优先低延迟）
 
   - PROCESS-NAME,com.google.android.apps.authenticator2          # 谷歌身份验证器进程名
@@ -27,9 +27,9 @@ payload:
 
 
 
-  ######################
+
   # 谷歌 高风险验证 规则，例如google voice gv规则等,逐步完善中.谷歌高敏感服务（悠哉用途：账号验证、GV 等服务，对节点地域有强要求，需美国节点）
-  ######################
+
   
   - DOMAIN,voice.googleapis.com
   - DOMAIN,voice.google.com
@@ -82,3 +82,15 @@ payload:
 
 # 谷歌兜底结束。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。
 
+# open ai 规则  ChatGPT
+
+  - PROCESS-NAME,com.openai.chatgpt
+  - DOMAIN-KEYWORD,openai.chatgpt
+  - DOMAIN-KEYWORD,openai
+  - DOMAIN-SUFFIX,openai.com 
+  - DOMAIN,android.chat.openai.com
+  - DOMAIN-SUFFIX,openaiapis.com
+  - DOMAIN-SUFFIX,api.openai.com
+  - DOMAIN-SUFFIX,platform.openai.com
+  - DOMAIN-SUFFIX,cdn.openai.com
+  - DOMAIN-SUFFIX,relay.openai.com
