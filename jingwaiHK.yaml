@@ -1,0 +1,32 @@
+payload:
+
+  # gps 虚拟定位规则
+  - PROCESS-NAME,com.rosteam.gpsemulator
+  # 电视商店和桌面
+  - PROCESS-NAME,com.oversea.aslauncher
+  - PROCESS-NAME,com.overseas.store.appstore
+  # instagram
+  - DOMAIN-SUFFIX,instagram.com 
+  - DOMAIN-KEYWORD,instagram
+  - PROCESS-NAME,com.instagram.android                      # ig视频
+  - PROCESS-NAME,com.instagram.barcelona             # Instagram推出的Threads应用
+  # discord  聊天室规则
+  - PROCESS-NAME,com.discord                        # Discord
+  # whatsapp 规则
+  - DOMAIN-SUFFIX,whatsapp.com
+  - DOMAIN-SUFFIX,whatsapp.net
+  - DOMAIN-KEYWORD,whatsapp
+  - PROCESS-NAME,com.whatsapp
+  # twitch 规则
+  - DOMAIN-SUFFIX,twitch.com
+  - DOMAIN-KEYWORD,twitch
+  - PROCESS-NAME,tv.twitch.android.app
+  # Twitter 规则
+  - DOMAIN-SUFFIX,twitter.com
+  - DOMAIN-KEYWORD,twitter
+  - PROCESS-NAME,com.twitter.android
+  # Facebook 规则
+  - DOMAIN-SUFFIX,facebook.com
+  - DOMAIN-KEYWORD,facebook
+  - PROCESS-NAME,com.facebook.orca             # 脸书短信
+  - PROCESS-NAME,com.facebook.katana
