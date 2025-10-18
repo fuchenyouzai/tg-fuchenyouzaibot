@@ -1,0 +1,26 @@
+payload:
+  # tiktok和.lite极速版 规则
+  - DOMAIN-SUFFIX,tiktok.com
+  - DOMAIN-SUFFIX,tiktokcdn.com
+  - DOMAIN-SUFFIX,tiktokv.com              # 视频流与资源加载核心域名
+  - DOMAIN-SUFFIX,muscdn.com
+  - DOMAIN-SUFFIX,akamaized.net      # CDN 子域名
+  - DOMAIN-SUFFIX,musicaly.ly             # 历史遗留的相关域名
+  - DOMAIN-SUFFIX,byteoversea.com
+  - DOMAIN-SUFFIX,tiktokcdn-us.com       # 海外CDN节点（美洲区域）
+  - DOMAIN-SUFFIX,tiktokcdn-eu.com        # 海外CDN节点（欧洲区域）
+  - DOMAIN-SUFFIX,tiktokshop.com
+  - DOMAIN-SUFFIX,seller.us.tiktokshopglobalselling.com
+  - DOMAIN-SUFFIX,seller.uk.tiktokshopglobalselling.com
+  - DOMAIN-SUFFIX,tiktok-shops.com
+  - DOMAIN-SUFFIX,tiktokads.com 
+  - DOMAIN-SUFFIX,live-tiktok.com 
+  - DOMAIN-SUFFIX,larksuite.com        #  Lark
+  - DOMAIN-KEYWORD,tiktok
+  - DOMAIN-KEYWORD,zhiliaoapp
+  - DOMAIN-KEYWORD,zhiliaoapp.musically  
+  - PROCESS-NAME,com.tiktok.lite.go                 # tiktok极速版
+  - PROCESS-NAME,com.zhiliaoapp.musically      # 全球版本和非洲版本
+  - PROCESS-NAME,com.ss.android.ugc.trill       # 亚洲和东南亚版本
+  - PROCESS-NAME,com.tiktokshop.serller         # 商店
+
