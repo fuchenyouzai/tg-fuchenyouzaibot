@@ -1,7 +1,7 @@
 payload:
   # 内容：网络jiance,🕹️ 手动选择节点分组
   # 数量：X 条
-  # USER-AGENT,pubgandjiance*
+  # USER-AGENT,jiance*
 
 
 # 检测ip和dbs检测
@@ -19,4 +19,5 @@ payload:
   - DOMAIN-SUFFIX,dns.whoer.cc
   - DOMAIN-KEYWORD,whoer.net
   - DOMAIN-KEYWORD,whoer.com
+
   - DOMAIN-KEYWORD,ipcheck.ing
